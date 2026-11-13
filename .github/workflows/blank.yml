@@ -4,13 +4,10 @@ jobs:
 build:
 runs-on: ubuntu-latest
 steps:
-- name: Checkout repository
-uses: actions/checkout@v4
-- name: Setup Node.js
-uses: actions/setup-node@v4
+- uses: actions/checkout@v4
+- uses: actions/setup-node@v4
 with:
 node-version: '20'
-- name: Run bundle
-run: |
+- run: |
 npm install
 node cli/makefun.mjs bundle --repo https://github.com/moonspiid/the-broken-sun --out transcripts.tar.gz
